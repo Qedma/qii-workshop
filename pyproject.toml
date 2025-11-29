@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "qii-workshop"
+version = "0.1.0"
+description = "QESEM tutorial for the QII Workshop 2025"
+authors = ["Tasneem Watad <tasneem.watad@qedma.com>"]
+readme = "README.md"
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+qiskit = ">=2.0.0"
+qiskit-ibm-runtime = ">=0.40.0"
+qiskit-ibm-catalog = ">=0.8.0"
+qiskit-aer = ">=0.17.1"
+jupyter = ">=1.1.1"
+networkx = ">=3.5"
+matplotlib = ">=3.10.3"
+pylatexenc = ">=2.10"
+tqdm = ">=4.67.1"
+scipy = "*"
+numpy = "*"
+qedma-api = "0.18.3"
+jupytext = ">=1.17.2"
+python-dotenv= "1.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = ">=4.2.0"
+ipykernel = ">=6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
