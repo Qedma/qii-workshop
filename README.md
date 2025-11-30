@@ -12,12 +12,16 @@ How to Run the Notebooks
     -	Qiskit function version: [click here](https://colab.research.google.com/github/Qedma/qii-workshop/blob/main/qesem_lab_qiskit_function.ipynb).
     -	QEDMA SaaS API version: [click here](https://colab.research.google.com/github/Qedma/qii-workshop/blob/main/qesem_lab_qedma_api.ipynb). 
   - Run locally:
-    Clone the repository and run the main Python notebooks locally. 
+    Clone the repository and run the main Python notebooks locally.
+    
 Package Requirements
+
 All python package requirements appear at the top of each notebook, along with the pip command to install them: 
 pip install "qiskit>=2.0.0" "qiskit-ibm-runtime>=0.40.0" "qiskit-aer>=0.17.1" "networkx>=3.5" "matplotlib==3.10.0" "tqdm>=4.67.1" "scipy" "numpy" "python-dotenv==1.2.1" "pylatexenc>=2.10"  "qiskit-ibm-catalog ==0.11.0" "qedma-api==0.18.3"
 For your convenience, requirements can also be installed using poetry from the `poetry.lock` file.
+
 Solution Notebooks
+
 Solution versions of the notebooks are available here:
   - QEDMA SaaS API version:
     - Google Colab: [here](https://colab.research.google.com/github/Qedma/qii-workshop/blob/main/qesem_lab_solution_qedma_api.ipynb)
