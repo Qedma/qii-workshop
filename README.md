@@ -17,7 +17,8 @@ How to Run the Notebooks
 Package Requirements
 
 All python package requirements appear at the top of each notebook, along with the pip command to install them: 
-pip install "qiskit>=2.0.0" "qiskit-ibm-runtime>=0.40.0" "qiskit-aer>=0.17.1" "networkx>=3.5" "matplotlib==3.10.0" "tqdm>=4.67.1" "scipy" "numpy" "python-dotenv==1.2.1" "pylatexenc>=2.10"  "qiskit-ibm-catalog ==0.11.0" "qedma-api==0.18.3"
+pip install "qiskit>=2.0.0" "qiskit-ibm-runtime>=0.40.0" "qiskit-aer>=0.17.1" "networkx>=3.5" "matplotlib==3.10.0" "tqdm>=4.67.1" "scipy" "numpy" "python-dotenv==1.2.1" "pylatexenc>=2.10"  "qiskit-ibm-catalog ==0.11.0" "qedma-api==0.18.3".
+
 For your convenience, requirements can also be installed using poetry from the `poetry.lock` file.
 
 Solution Notebooks
