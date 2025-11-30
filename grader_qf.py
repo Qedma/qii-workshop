@@ -3,46 +3,35 @@ import math
 
 import networkx as nx
 import numpy as np
-import qedma_api
 import qiskit
 import qiskit.quantum_info
 
 CORRECT_MESSAGE = "Congratulations! 🎉 Your answer is correct."
 INCORRECT_MESSAGE = "Sorry, your answer is incorrect. Please try again."
 
+def grade_ex2_qf(max_execution_time_ex2: int) -> str:
+    # Check max QPU time specified
+    if not isinstance(max_execution_time_ex2, int):
+        return "Type error in input parameter"
 
-def grade_ex2(job: qedma_api.ClientJobDetails, job_id: str, max_qpu_time_ex2: datetime.timedelta) -> str:
-    # Check job ID
-    if not isinstance(job_id, str):
-        return "Job ID should be a string. Please try again."
-
-    # Check max QPU time
-    if not isinstance(max_qpu_time_ex2, datetime.timedelta):
-        return "max_qpu_time_ex2 should be a timedelta object. Please try again."
-
-    # Check job ID matches
-    if job.job_id != job_id:
-        return f"Job ID mismatch: expected {job_id}, got {job.id}. Please try again."
-
-    # Check max QPU time range
-    if not max_qpu_time_ex2 == datetime.timedelta(minutes=15):
-        return "Please set the max QPU time to 15 minutes. Please try again."
+    if not max_execution_time_ex2 == 900:
+        return "Please set the max QPU time to 900 seconds. Please try again."
 
     return CORRECT_MESSAGE
 
 
-def grade_ex3(precision: float, empirical_time_estimation: bool) -> str:
+def grade_ex3_qf(precision: float, estimate_time_only: str) -> str:
 
     # check types:
-    if not isinstance(precision, float) or not isinstance(empirical_time_estimation, bool):
+    if not isinstance(precision, float) or not isinstance(estimate_time_only, str):
         return "Type error in input parameter"
 
     # test options
     if precision != 0.02:
         return "Precision is not set to the correct value. Please try again."
 
-    if empirical_time_estimation:
-        return "Analytical time estimation should be used"
+    if estimate_time_only != "analytical":
+        return 'Analytical time estimation should be used, i.e., estimate_time_only="analytical". Please try again.'
 
     return CORRECT_MESSAGE
 
@@ -79,13 +68,12 @@ def grade_ex_4_1(circuit: qiskit.QuantumCircuit) -> str:
 
     return CORRECT_MESSAGE
 
-
-def grade_ex_4_2(
+def grade_ex_4_2_qf(
     precision_ex4_2: float,
     circuit_ex4_2: qiskit.QuantumCircuit,
     observables_ex4_2: list[qiskit.quantum_info.SparsePauliOp],
     backend_ex4_2: str,
-    empirical_time_estimation_ex4_2: bool,
+    estimate_time_only_ex4_2: str,
 ) -> str:
 
     # Expected values for Exercise 4.2
@@ -111,7 +99,7 @@ def grade_ex_4_2(
     if not backend_ex4_2.lower().startswith("fake"):
         return "Backend name should be an IBMQ fake backend noisy simulator. Please try again."
 
-    if not empirical_time_estimation_ex4_2:
+    if estimate_time_only_ex4_2 != "empirical":
         return "Empirical time estimation should be used. Please try again."
 
     # Check pubs format
@@ -131,9 +119,9 @@ def grade_ex_4_2(
 
     return CORRECT_MESSAGE
 
-def grade_ex_4_3(max_qpu_time_ex4_3: datetime.timedelta) -> str:
+def grade_ex_4_3_qf(max_execution_time_ex4_3: int) -> str:
 
-    if datetime.timedelta(minutes=1) <= max_qpu_time_ex4_3 <= datetime.timedelta(minutes=10):
+    if 60 <= max_execution_time_ex4_3 <= 600:
         return CORRECT_MESSAGE
 
     return "max_qpu_time_ex4_3 should be between 1 minute and 10 minutes. Please try again."
